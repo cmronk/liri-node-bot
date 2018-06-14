@@ -7,8 +7,6 @@ var keys = require("./keys.js");
 
 // requiring Twitter
 var Twitter = require("twitter");
-// requiring moment to format twitter's timestamps
-// var moment = require("moment");
 
 // requiring spotify
 var Spotify = require("node-spotify-api");
@@ -41,7 +39,6 @@ switch (command) {
     case "do-what-it-says":
         doIt();
         break;
-
 }
 
 if (!command) {
@@ -55,15 +52,11 @@ function showTweets() {
             for (var i = 0; i < tweets.length; i++) {
                 var tweetDate = tweets[i].created_at.split(" ", 6);
                 var tweetTimes = tweetDate[0] + " " + tweetDate[1] + " " + tweetDate[2] + " " + tweetDate[3];
-                // using moment.js to format time to say how long ago, get depreciation warning...
-                // var formattedTime = moment(tweetDate).startOf("hour").fromNow();
-
                 console.log(tweetTimes);
                 console.log(tweets[i].text);
             }
         }
     });
-
 };
 
 // Spotify
@@ -125,33 +118,26 @@ function showMovies() {
         }
     });
 };
-// spotify-this-song,"I Want it That Way"
+
 function doIt() {
-    var fs = require("fs");
+    // var fs = require("fs");
     fs.readFile("random.txt", "utf8", function (err, data) {
         if (err) {
             return console.log(err);
         } else {
-            var randomFileSplit = data.split(",", 2);
-            var txtCommand = randomFileSplit[0];
-            var textInput = randomFileSplit[1];
+            var fileCommands = data.split(",");
+    
+            if (fileCommands[0] == "my-tweets") {
+                showTweets();
+            } else if (fileCommands[0] == "spotify-this-song") {
+                process.argv[3] = fileCommands[1];
+                songs();
+            } else if (fileCommands[0] == "movie-this") {
+                process.argv[3] = fileCommands[1];
+                showMovies();
+            } else {
+                console.log("Not sure what you want me to do here....");
+            }
         }
-        // works
-        if (txtCommand == "my-tweets") {
-            showTweets();
-        // doesn't take in song
-        } else if (txtCommand == "spotify-this-song") {
-            var song = textInput;
-            console.log(song);
-            songs;
-        // doesn't take in movie
-        } else if (txtCommand == "movie-this") {
-            var movie = textInput;
-            console.log(movie);
-            showMovies();
-        } else {
-            console.log("Not sure what you want me to do here....");
-        }
-
     });
 }
