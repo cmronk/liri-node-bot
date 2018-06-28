@@ -6,13 +6,13 @@ Save this file to a folder on your machine, then navigate to that folder with Te
 
 To run this file, you will need node.js along with several packages from from the NPM(Node Package Manager).  
 
-Firstly follow the link below to install ![Node.js](https://nodejs.org/en/).
+Firstly follow the link below to install [Node.js](https://nodejs.org/en/).
 
-Install dotenv by using the command ![npm install dotenv](https://www.npmjs.com/package/dotenv).
+Install dotenv by using the command [npm install dotenv](https://www.npmjs.com/package/dotenv).
 
-Install ![Twitter](https://www.npmjs.com/package/twitter), ![Spotify](https://www.npmjs.com/package/node-spotify-api), and ![Request](https://www.npmjs.com/package/request) to use the ![OMDB API](http://www.omdbapi.com/). 
+Install [Twitter](https://www.npmjs.com/package/twitter), [Spotify](https://www.npmjs.com/package/node-spotify-api), and [Request](https://www.npmjs.com/package/request) to use the [OMDB API](http://www.omdbapi.com/). 
 
-Use your own keys and tokens for ![Spotify](https://developer.spotify.com/dashboard/login), ![Twitter](https://apps.twitter.com/app/new), and ![OMDB](http://www.omdbapi.com/apikey.aspx) or request access at each of their respective links above. Store these keys as follows in a .env text file. 
+Use your own keys and tokens for [Spotify](https://developer.spotify.com/dashboard/login), [Twitter](https://apps.twitter.com/app/new), and [OMDB](http://www.omdbapi.com/apikey.aspx) or request access at each of their respective links above. Store these keys as follows in a .env text file. 
 
 ## Spotify API keys
 
